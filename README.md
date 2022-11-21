@@ -7,7 +7,7 @@
 ##### 2. copy / paste the following line into your terminal:
 
 ```sh
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Nuovo-Artistic-Studios/MacOS-Setup-Script/main/macos.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Nuovo-Artistic-Studios/MacOS-Setup-Script/main/macos.sh)"
 ```
 
 ##### 3. Enter Password
