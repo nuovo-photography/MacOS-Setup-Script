@@ -210,17 +210,17 @@ brew analytics off && \
 # Check Brew Analytics
 brew analytics 
 
+echo 'PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 # ---------------------------------------------------------------------------------------------
 
 say -v Moira "Installing HomeBrew Apps"
 printf "⚙️ Installing HomeBrew Apps"
 
 # Install more recent versions of some OS X tools.
-brew install homebrew/dupes/grep && \ 
-brew install wget  && \ 
-brew install --cask adobe-creative-cloud  && \ 
-brew install --cask google-chrome  && \ 
-brew install --cask slack  && \ 
+brew install wget && \ 
+brew install --cask adobe-creative-cloud && \ 
+brew install --cask google-chrome && \ 
+brew install --cask slack && \ 
 brew install --cask zoom && \
 brew install --cask google-drive
 
