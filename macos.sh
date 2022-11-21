@@ -221,7 +221,8 @@ brew install wget  && \
 brew install --cask adobe-creative-cloud  && \ 
 brew install --cask google-chrome  && \ 
 brew install --cask slack  && \ 
-brew install --cask zoom ;
+brew install --cask zoom && \
+brew install --cask google-drive
 
 
 # ---------------------------------------------------------------------------------------------
@@ -298,39 +299,12 @@ fi
 
 # ---------------------------------------------------------------------------------------------
 
-# Download, Mount, Install & Clear Google Drive App and Download Folder
-# make temp folder for downloads
-say -v Moira "Deploying Google Drive!"
-printf "⚙️ Installing Google Drive"
-
-mkdir "/tmp/googledrive"
-
-# change working directory
-cd "/tmp/googledrive"
-#download Google Drive File Stream
-curl -L -o "/tmp/googledrive/GoogleDrive.dmg" "https://dl.google.com/drive-file-stream/GoogleDrive.dmg"
-# Mount the DMG
-hdiutil attach GoogleDrive.dmg -nobrowse
-# Get Volume Name
-Volume=$(diskutil info / | grep "Volume Name:" | awk '{print $3,$4,$5,$6}')
-# Install Google Drive
-sudo installer -pkg /Volumes/Install\ Google\ Drive/GoogleDrive.pkg -target /
-#Tidy Up
-hdiutil unmount "/Volumes/Install Google Drive"
-sleep 5
-sudo rm -rf "/tmp/googledrive"
-sleep 5
-#Bless Google Drive app
-xattr -rc "/Applications/Google Drive.app"
-
-# ---------------------------------------------------------------------------------------------
-
 # Change name if you do not own a MacBook | Passed through CLI Arguments: ex: macos.sh -m "macname" or macos.sh --macname "macname"
 # printf "⚙️ Configure computer name...\n"
-# sudo scutil --set ComputerName $macname
-# sudo scutil --set HostName $macname
-# sudo scutil --set LocalHostName $macname
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $macname
+sudo scutil --set ComputerName $macname && \
+sudo scutil --set HostName $macname && \
+sudo scutil --set LocalHostName $macname && \
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $macname
 
 # ---------------------------------------------------------------------------------------------
 
