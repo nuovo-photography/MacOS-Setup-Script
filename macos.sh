@@ -301,10 +301,10 @@ fi
 
 # Change name if you do not own a MacBook | Passed through CLI Arguments: ex: macos.sh -m "macname" or macos.sh --macname "macname"
 # printf "⚙️ Configure computer name...\n"
-sudo scutil --set ComputerName $macname && \
-sudo scutil --set HostName $macname && \
-sudo scutil --set LocalHostName $macname && \
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $macname
+# sudo scutil --set ComputerName $macname && \
+# sudo scutil --set HostName $macname && \
+# sudo scutil --set LocalHostName $macname && \
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $macname
 
 # ---------------------------------------------------------------------------------------------
 
